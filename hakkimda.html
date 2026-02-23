@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Hakkımda | Zeynep Eke</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;800&family=Playfair+Display:ital,wght@0,900;1,900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: #fff; color: #000; overflow-x: hidden; }
+        nav { position: fixed; top: 0; width: 100%; padding: 35px 6%; z-index: 1000; background: #fff; border-bottom: 2px solid #000; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 900; text-decoration: none; color: #000; }
+        .hero { padding: 180px 8% 100px; display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: start; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 9vw; line-height: 0.8; letter-spacing: -4px; }
+        .h-outline { -webkit-text-stroke: 1px #000; color: transparent; font-style: italic; }
+        .text-content { font-size: 1.25rem; line-height: 1.9; font-weight: 300; color: #222; margin-top: 50px; text-align: justify; }
+        
+        /* Gelişmiş Fotoğraf Çerçevesi */
+        .photo-container { position: relative; width: 100%; height: 750px; }
+        .photo-frame-back { position: absolute; top: 30px; left: 30px; width: 100%; height: 100%; border: 3px solid #000; z-index: 1; }
+        .photo-main { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: #eee; border: 3px solid #000; z-index: 2; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+        .photo-label { position: absolute; bottom: -20px; right: 40px; background: #000; color: #fff; padding: 20px 40px; font-weight: 800; font-size: 0.7rem; letter-spacing: 5px; z-index: 3; transform: rotate(-2deg); }
+
+        .mv-section { display: flex; border-top: 2px solid #000; background: #000; color: #fff; }
+        .mv-card { flex: 1; padding: 120px 8%; border-right: 1px solid rgba(255,255,255,0.1); }
+        .mv-card h2 { font-family: 'Playfair Display'; font-size: 4rem; margin-bottom: 30px; color: #c5a47e; }
+        .mv-card p { opacity: 0.7; font-size: 1.1rem; line-height: 1.8; }
+    </style>
+</head>
+<body>
+    <nav><a href="index.html" class="logo">ZE</a></nav>
+    <section class="hero">
+        <div>
+            <h1>ZEYNEP <br> <span class="h-outline">EKE</span></h1>
+            <div class="text-content">
+                <p>Yeditepe Üniversitesi Beslenme ve Diyetetik bölümünden mezun olduktan sonra, insan psikolojisinin biyoloji üzerindeki mutlak etkisini görerek Psikoloji bölümünde Çift Ana Dal (ÇAP) eğitimimi tamamladım. Bu akademik yolculuk, bana sadece kalorileri değil, o kalorileri almamıza neden olan duygusal şemaları da anlamayı öğretti.</p>
+                <br>
+                <p>Türkiye'de hem diyetisyen hem psikolog ünvanına sahip nadir uzmanlardan biri olarak, danışanlarıma tabağın ötesinde, zihnin derinliklerini içeren bir yol haritası sunuyorum. Klinik tecrübem boyunca yeme bozuklukları ve duygu regülasyonu üzerine yoğunlaştım. Bugün, bilimin ışığında zihin ve bedeni tek bir odakta birleştirerek, sürdürülebilir bir iyilik hali inşa ediyoruz.</p>
+            </div>
+        </div>
+        <div class="photo-container">
+            <div class="photo-frame-back"></div>
+            <div class="photo-main">
+                <span style="opacity: 0.2; font-weight: 800;">PROFESYONEL PORTRE</span>
+            </div>
+            <div class="photo-label">CLINICAL EXPERTISE</div>
+        </div>
+    </section>
+    <div class="mv-section">
+        <div class="mv-card">
+            <h2>MİSYON</h2>
+            <p>Modern dünyanın dayattığı "yasakçı" diyet kültürünün yarattığı psikolojik tahribatı onarmak; beslenmeyi bir stres kaynağı olmaktan çıkarıp, bedene ve zihne verilen bir özbakım eylemine dönüştürmektir. Bilimsel kanıta dayalı yöntemleri, şefkatli bir klinik yaklaşımla harmanlayarak her danışanın kendi biyolojik ritmini keşfetmesine rehberlik ediyoruz. Sağlık, bizim için zihin ve bedenin tam uyumudur.</p>
+        </div>
+        <div class="mv-card" style="border:none">
+            <h2>VİZYON</h2>
+            <p>Bütüncül sağlık yaklaşımında Türkiye'nin referans noktası olmak ve "Beslenme Psikolojisi" alanında yeni standartlar belirlemektir. Gelecekte, zihin ve beden sağlığının birbirinden ayrı düşünülemediği bir toplum bilinci oluşturmak; dijital ve fiziksel platformlarda milyonlarca insanın kendisiyle barışık, sağlıklı ve özgür bir yaşam sürmesine öncülük eden küresel bir marka haline gelmektir.</p>
+        </div>
+    </div>
+</body>
+</html>
