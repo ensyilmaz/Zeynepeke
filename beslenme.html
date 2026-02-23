@@ -9,8 +9,10 @@
         body { font-family: 'Plus Jakarta Sans', sans-serif; background: #0d1a12; color: #fff; overflow-x: hidden; }
         nav { position: fixed; top: 0; width: 100%; padding: 35px 6%; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(13, 26, 18, 0.8); backdrop-filter: blur(10px); }
         .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 900; text-decoration: none; color: #fff; }
+        
         .header { height: 75vh; display: flex; align-items: center; padding: 0 8%; border-bottom: 1px solid rgba(255,255,255,0.1); }
         .header h1 { font-family: 'Playfair Display'; font-size: 10vw; line-height: 0.9; }
+
         .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid rgba(255,255,255,0.1); }
         .s-item { padding: 100px 50px; border-right: 1px solid rgba(255,255,255,0.1); transition: 0.4s; }
         .s-item:hover { background: #1a2a1f; }
@@ -25,7 +27,6 @@
         /* Smooth SSS Animasyonu */
         .faq-item { border-bottom: 1px solid #eee; }
         .faq-question { padding: 30px 0; width: 100%; text-align: left; background: none; border: none; font-family: 'Plus Jakarta Sans'; font-weight: 800; font-size: 1.1rem; text-transform: uppercase; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: 0.3s; }
-        .faq-question:hover { color: #1e3a2a; }
         .faq-answer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.5s cubic-bezier(0.4, 0, 0.2, 1); overflow: hidden; }
         .faq-item.active .faq-answer { grid-template-rows: 1fr; }
         .faq-answer-content { min-height: 0; padding-bottom: 0; opacity: 0; transition: 0.5s; font-size: 1rem; line-height: 1.7; }
@@ -44,25 +45,21 @@
     <div class="faq-form-section">
         <div class="faq-area">
             <h2 style="font-family:'Playfair Display'; font-size:4rem; margin-bottom:40px;">SIKÇA SORULANLAR</h2>
-            
+            <div class="faq-item">
+                <button class="faq-question">Diyet listeleri her hafta değişiyor mu? <span>+</span></button>
+                <div class="faq-answer"><div class="faq-answer-content">Metabolizmanın adaptasyonunu önlemek ve motivasyonu yüksek tutmak adına seans sıklığınıza göre programlarımızı güncelliyoruz.</div></div>
+            </div>
             <div class="faq-item">
                 <button class="faq-question">Kan tahlili yaptırmam şart mı? <span>+</span></button>
                 <div class="faq-answer"><div class="faq-answer-content">Evet, bilimsel bir rota çizebilmek için kan tahlili analizi şarttır. Biyokimyasal verileriniz, protokolün en güvenilir pusulasıdır.</div></div>
             </div>
-
-            <div class="faq-item">
-                <button class="faq-question">Şok diyetlerden farkı nedir? <span>+</span></button>
-                <div class="faq-answer"><div class="faq-answer-content">Şok diyetler metabolizmaya zarar verir. Bizim yaklaşımımız, vücudun ihtiyacı olan besinleri dengelerken sürdürülebilir bir kültür kazandırmaktır.</div></div>
-            </div>
-
             <div class="faq-item">
                 <button class="faq-question">İnsülin direnci varken kilo verebilir miyim? <span>+</span></button>
                 <div class="faq-answer"><div class="faq-answer-content">Kesinlikle. Doğru karbonhidrat yönetimi ve metabolik planlama ile insülin direnci yönetilmesi gereken bir süreçtir, engel değildir.</div></div>
             </div>
-
             <div class="faq-item">
                 <button class="faq-question">Sürdürülebilirlik nasıl sağlanıyor? <span>+</span></button>
-                <div class="faq-answer"><div class="faq-answer-content">Sizi kısıtlayan listeler yerine, esnek beslenme modelleri ve sosyal hayatınıza uyumlu stratejiler geliştiriyoruz. Yemek bir ceza değildir.</div></div>
+                <div class="faq-answer"><div class="faq-answer-content">Sizi kısıtlayan listeler yerine esnek modeller geliştiriyoruz. Sosyal hayatınıza uyumlu stratejilerle yemek yemeyi bir keyif haline getiriyoruz.</div></div>
             </div>
         </div>
         <div class="form-area">

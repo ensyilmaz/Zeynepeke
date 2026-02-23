@@ -9,8 +9,10 @@
         body { font-family: 'Plus Jakarta Sans', sans-serif; background: #0f0c11; color: #fff; overflow-x: hidden; }
         nav { position: fixed; top: 0; width: 100%; padding: 35px 6%; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.05); background: rgba(15, 12, 17, 0.8); backdrop-filter: blur(10px); }
         .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 900; text-decoration: none; color: #fff; }
+        
         .header { height: 75vh; display: flex; align-items: center; padding: 0 8%; border-bottom: 1px solid rgba(255,255,255,0.1); }
         .header h1 { font-family: 'Playfair Display'; font-size: 10vw; line-height: 0.9; }
+
         .service-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid rgba(255,255,255,0.1); }
         .s-item { padding: 100px 50px; border-right: 1px solid rgba(255,255,255,0.1); transition: 0.4s; }
         .s-item:hover { background: #1a151d; }
@@ -25,7 +27,6 @@
         /* Smooth SSS Animasyonu */
         .faq-item { border-bottom: 1px solid #eee; }
         .faq-question { padding: 30px 0; width: 100%; text-align: left; background: none; border: none; font-family: 'Plus Jakarta Sans'; font-weight: 800; font-size: 1.1rem; text-transform: uppercase; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: 0.3s; }
-        .faq-question:hover { color: #3b2b45; }
         .faq-answer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.5s cubic-bezier(0.4, 0, 0.2, 1); overflow: hidden; }
         .faq-item.active .faq-answer { grid-template-rows: 1fr; }
         .faq-answer-content { min-height: 0; padding-bottom: 0; opacity: 0; transition: 0.5s; font-size: 1rem; line-height: 1.7; }
@@ -44,30 +45,26 @@
     <div class="faq-form-section">
         <div class="faq-area">
             <h2 style="font-family:'Playfair Display'; font-size:4rem; margin-bottom:40px;">SIKÇA SORULANLAR</h2>
-            
             <div class="faq-item">
                 <button class="faq-question">Psikolojik danışmanlık süreci ne kadar sürer? <span>+</span></button>
-                <div class="faq-answer"><div class="faq-answer-content">Bu süre, çalışılacak konunun derinliğine ve bireysel ihtiyaçlarınıza bağlıdır. Genellikle ilk seanslarda bir yol haritası belirleriz; odaklı çalışmalar 8-12 seans sürebilir.</div></div>
+                <div class="faq-answer"><div class="faq-answer-content">Bu süre çalışılacak konunun derinliğine bağlıdır. Odaklı çalışmalar genellikle 8-12 seans sürer ancak bazı durumlar daha uzun vadeli derinleşme gerektirebilir.</div></div>
             </div>
-
             <div class="faq-item">
                 <button class="faq-question">Duygusal yeme ile tek başıma başa çıkabilir miyim? <span>+</span></button>
-                <div class="faq-answer"><div class="faq-answer-content">Profesyonel destek, bu atakların altındaki asıl "açlığı" anlamanıza ve kalıcı bir özgürlük kazanmanıza yardımcı olur. Bilinçaltındaki şemaları tek başına çözmek zordur.</div></div>
+                <div class="faq-answer"><div class="faq-answer-content">Duygusal yeme genellikle bilinçaltındaki şemalarla ilişkilidir. Profesyonel destek, bu atakların altındaki asıl "açlığı" anlamanıza ve kalıcı bir özgürlük kazanmanıza yardımcı olur.</div></div>
             </div>
-
-            <div class="faq-item">
-                <button class="faq-question">Seanslar online mı yoksa yüz yüze mi yapılıyor? <span>+</span></button>
-                <div class="faq-answer"><div class="faq-answer-content">Her iki seçenek de mevcuttur. Bilimsel veriler online terapinin yüz yüze terapi kadar etkili olduğunu göstermektedir; size uygun olanı seçebilirsiniz.</div></div>
-            </div>
-
             <div class="faq-item">
                 <button class="faq-question">Gizlilik süreci nasıl sağlanıyor? <span>+</span></button>
                 <div class="faq-answer"><div class="faq-answer-content">Tüm seanslar tam gizlilik ilkesine ve mesleki etik kurallara bağlıdır. Bilgileriniz sizin izniniz olmadan asla üçüncü şahıslarla paylaşılmaz.</div></div>
             </div>
+            <div class="faq-item">
+                <button class="faq-question">İlk seans nasıl geçer? <span>+</span></button>
+                <div class="faq-answer"><div class="faq-answer-content">İlk seans bir değerlendirme sürecidir. Sizi buraya getiren nedenleri konuşur, beklentilerinizi anlar ve nasıl bir rota izleyeceğimizi belirleriz.</div></div>
+            </div>
         </div>
         <div class="form-area">
             <h2>KENDİNE YER AÇ</h2>
-            <p style="margin-top:20px; opacity:0.7;">Ruhsal dengeniz için bir adım atın.</p>
+            <p style="margin-top:20px; opacity:0.7;">Ruhsal dengeniz için profesyonel bir yolculuğa başlayın.</p>
             <a href="#" class="btn">RANDEVU FORMU</a>
         </div>
     </div>

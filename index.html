@@ -9,6 +9,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Plus Jakarta Sans', sans-serif; background: #000; color: #fff; overflow: hidden; }
 
+        /* Perde Geçiş Efekti */
         #transition-curtain {
             position: fixed; top: 0; left: 0; width: 100%; height: 0%;
             background: #fff; z-index: 10000; transition: height 0.6s cubic-bezier(0.77, 0, 0.175, 1);
@@ -59,27 +60,37 @@
             <h2>MIND</h2>
             <div class="side-content">
                 <h3 style="font-size: 2.5rem; font-family: 'Playfair Display'; color:#fff;">ZİHİN</h3>
-                <p style="letter-spacing: 3px; font-size: 0.6rem; margin-top: 10px; color:#fff;">GİRİŞ YAP →</p>
+                <p style="letter-spacing: 3px; font-size: 0.6rem; margin-top: 10px; color:#fff;">KEŞFET →</p>
             </div>
         </a>
         <a href="beslenme.html" class="side nut-side">
             <h2>BODY</h2>
             <div class="side-content">
                 <h3 style="font-size: 2.5rem; font-family: 'Playfair Display'; color:#fff;">BEDEN</h3>
-                <p style="letter-spacing: 3px; font-size: 0.6rem; margin-top: 10px; color:#fff;">GİRİŞ YAP →</p>
+                <p style="letter-spacing: 3px; font-size: 0.6rem; margin-top: 10px; color:#fff;">KEŞFET →</p>
             </div>
         </a>
     </main>
 
     <script>
+        function resetTransitions() {
+            const curtain = document.getElementById('transition-curtain');
+            if (curtain) curtain.style.height = '0%';
+        }
+
         document.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', e => {
-                if(link.hostname === window.location.hostname && !link.hash) {
+                if(link.hostname === window.location.hostname && !link.hash && link.href.includes('.html')) {
                     e.preventDefault();
                     document.getElementById('transition-curtain').style.height = '100%';
                     setTimeout(() => { window.location = link.href; }, 600);
                 }
             });
+        });
+
+        // Geri tuşu fixi (BFCache)
+        window.addEventListener('pageshow', (event) => {
+            resetTransitions();
         });
     </script>
 </body>
