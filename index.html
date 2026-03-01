@@ -9,7 +9,7 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Plus Jakarta Sans', sans-serif; background: #000; color: #fff; overflow: hidden; }
 
-        /* --- ÖZEL GEÇİŞ KATMANLARI --- */
+        /* --- GEÇİŞ KATMANI --- */
         #transition-circle {
             position: fixed; top: 50%; left: 50%; 
             width: 140px; height: 140px; border-radius: 50%;
@@ -17,28 +17,19 @@
             z-index: 10001; transition: transform 0.8s cubic-bezier(0.85, 0, 0.15, 1);
             pointer-events: none;
         }
-        #transition-left {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: #3b2b45; transform: translateX(-100%);
-            z-index: 10001; transition: transform 0.7s cubic-bezier(0.77, 0, 0.175, 1);
-            pointer-events: none;
-        }
-        #transition-right {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: #0d1a12; transform: translateX(100%);
-            z-index: 10001; transition: transform 0.7s cubic-bezier(0.77, 0, 0.175, 1);
-            pointer-events: none;
-        }
 
         nav { position: fixed; top: 0; width: 100%; padding: 35px 6%; z-index: 1000; }
         .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 900; text-decoration: none; color: #fff; }
 
         .portal { display: flex; height: 100vh; width: 100vw; }
+        
+        /* Yan paneller artık <a> değil <div>, tıklama özelliği yok */
         .side { 
             flex: 1; position: relative; display: flex; align-items: center; justify-content: center;
-            text-decoration: none; overflow: hidden; transition: flex 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            overflow: hidden; transition: flex 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            cursor: default; /* Tıklanabilir olmadığını belirtmek için */
         }
-        .side:hover { flex: 1.5; }
+        .side:hover { flex: 1.2; }
         .psy-side { background: #1a151d; border-right: 1px solid rgba(255,255,255,0.05); }
         .nut-side { background: #0d1a12; }
 
@@ -46,66 +37,94 @@
             font-family: 'Playfair Display', serif; font-size: 12vw; font-style: italic; 
             color: #fff; opacity: 0.04; transition: 0.5s; position: absolute; pointer-events: none;
         }
-        .side:hover h2 { opacity: 0.1; transform: scale(1.05); }
+        .side:hover h2 { opacity: 0.08; transform: scale(1.05); }
 
-        .side-content { text-align: center; z-index: 10; transform: translateY(20px); opacity: 0; transition: 0.4s 0.2s; }
-        .side:hover .side-content { transform: translateY(0); opacity: 1; }
+        .side-content { text-align: center; z-index: 10; opacity: 0.6; transition: 0.4s; }
+        .side:hover .side-content { opacity: 1; }
+
+        /* MERKEZ BUTONLAR GRUBU */
+        .center-group {
+            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+            z-index: 100; display: flex; flex-direction: column; align-items: center; gap: 30px;
+        }
 
         .center-seal {
-            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            z-index: 100; text-align: center; pointer-events: auto;
             background: #fff; color: #000; border-radius: 50%;
             width: 130px; height: 130px; display: flex; flex-direction: column; justify-content: center;
-            border: 3px solid #000; transition: 0.3s; text-decoration: none;
+            align-items: center; border: 3px solid #000; transition: 0.3s; text-decoration: none;
+            cursor: pointer;
         }
-        .center-seal:hover { transform: translate(-50%, -50%) scale(1.1); }
+        .center-seal:hover { transform: scale(1.1); box-shadow: 0 0 30px rgba(255,255,255,0.2); }
+
+        /* YENİ ÇERÇEVELİ BUTON */
+        .form-button {
+            padding: 12px 25px;
+            border: 1px solid rgba(255,255,255,0.5);
+            background: transparent;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: 0.4s;
+            font-weight: 800;
+        }
+        .form-button:hover {
+            background: #fff;
+            color: #000;
+            border-color: #fff;
+        }
     </style>
 </head>
 <body>
     <div id="transition-circle"></div>
-    <div id="transition-left"></div>
-    <div id="transition-right"></div>
 
     <nav><a href="index.html" class="logo">ZE</a></nav>
 
-    <a href="hakkimda.html" id="btn-hakkimda" class="center-seal">
-        <strong style="font-size: 0.8rem; letter-spacing: 1px;">ZEYNEP EKE</strong>
-        <span style="font-size: 0.4rem; letter-spacing: 1px; margin-top: 5px; font-weight: 800;">HAKKIMDA</span>
-    </a>
+    <div class="center-group">
+        <a href="hakkimda.html" id="btn-hakkimda" class="center-seal">
+            <strong style="font-size: 0.8rem; letter-spacing: 1px;">ZEYNEP EKE</strong>
+            <span style="font-size: 0.4rem; letter-spacing: 1px; margin-top: 5px; font-weight: 800;">HAKKIMDA</span>
+        </a>
+
+        <a href="iletisim.html" id="btn-iletisim" class="form-button">
+            Formu Doldur ve İletişime Geç
+        </a>
+    </div>
 
     <main class="portal">
-        <a href="psikoloji.html" id="btn-psikoloji" class="side psy-side">
+        <div class="side psy-side">
             <h2>MIND</h2>
             <div class="side-content">
                 <h3 style="font-size: 2.5rem; font-family: 'Playfair Display'; color:#fff;">ZİHİN</h3>
-                <p style="letter-spacing: 3px; font-size: 0.6rem; margin-top: 10px; color:#fff;">GİRİŞ YAP →</p>
             </div>
-        </a>
-        <a href="beslenme.html" id="btn-beslenme" class="side nut-side">
+        </div>
+        <div class="side nut-side">
             <h2>BODY</h2>
             <div class="side-content">
                 <h3 style="font-size: 2.5rem; font-family: 'Playfair Display'; color:#fff;">BEDEN</h3>
-                <p style="letter-spacing: 3px; font-size: 0.6rem; margin-top: 10px; color:#fff;">GİRİŞ YAP →</p>
             </div>
-        </a>
+        </div>
     </main>
 
     <script>
-        const navTo = (url, type) => {
-            if(type === 'circle') document.getElementById('transition-circle').style.transform = 'translate(-50%, -50%) scale(30)';
-            if(type === 'left') document.getElementById('transition-left').style.transform = 'translateX(0)';
-            if(type === 'right') document.getElementById('transition-right').style.transform = 'translateX(0)';
+        const navTo = (url) => {
+            document.getElementById('transition-circle').style.transform = 'translate(-50%, -50%) scale(35)';
             setTimeout(() => { window.location.href = url; }, 750);
         };
 
-        document.getElementById('btn-hakkimda').addEventListener('click', e => { e.preventDefault(); navTo('hakkimda.html', 'circle'); });
-        document.getElementById('btn-psikoloji').addEventListener('click', e => { e.preventDefault(); navTo('psikoloji.html', 'left'); });
-        document.getElementById('btn-beslenme').addEventListener('click', e => { e.preventDefault(); navTo('beslenme.html', 'right'); });
+        document.getElementById('btn-hakkimda').addEventListener('click', e => { 
+            e.preventDefault(); 
+            navTo('hakkimda.html'); 
+        });
 
-        window.addEventListener('pageshow', (event) => {
+        document.getElementById('btn-iletisim').addEventListener('click', e => { 
+            e.preventDefault(); 
+            navTo('iletisim.html'); 
+        });
+
+        window.addEventListener('pageshow', () => {
             document.getElementById('transition-circle').style.transform = 'translate(-50%, -50%) scale(0)';
-            document.getElementById('transition-left').style.transform = 'translateX(-100%)';
-            document.getElementById('transition-right').style.transform = 'translateX(100%)';
         });
     </script>
 </body>
